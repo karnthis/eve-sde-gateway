@@ -6,7 +6,7 @@ import (
 	"strconv"
 )
 
-func ShipTraits(c *fiber.Ctx) error {
+func Traits(c *fiber.Ctx) error {
 	submission := c.Query("selected")
 	value, err := strconv.Atoi(submission)
 	if err != nil {

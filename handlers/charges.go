@@ -5,7 +5,7 @@ import (
 	"sde/database"
 )
 
-func Modules(c *fiber.Ctx) error {
-	data := database.ReadModules()
+func Charges(c *fiber.Ctx) error {
+	data := database.ReadCharges()
 	return c.Status(200).JSON(data)
 }

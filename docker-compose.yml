@@ -1,0 +1,20 @@
+services:
+  sde-pg:
+    image: postgres:14-alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - owo_pg_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=unsafe
+      - POSTGRES_USER=owo_user
+      - POSTGRES_DB=owo_sde_db
+
+  owo_go:
+    build: .
+    restart: always
+    ports:
+      - 3001:3000
+
+volumes:
+  owo_pg_data:
